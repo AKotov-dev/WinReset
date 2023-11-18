@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sudo xterm -xrm XTerm*cursorColor:red -xrm XTerm*cursorBlink:true \
+-fa monospace -fs 10 -T "sudo /usr/bin/winreset" \
+-g 120x40+10+10 -e /usr/bin/winreset &
