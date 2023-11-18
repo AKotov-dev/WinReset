@@ -25,3 +25,5 @@ How to make a flash drive:
      a) In Windows - run Flash Drive as Administrator:\boot\syslinux\BootInstall.bat
      b) In Linux - run in the terminal (su/password) Flash drive/boot/syslinux/BootInstall.bat
 3. The flash drive is ready
+
+**Note:** Already tested for resetting Windows-10 passwords.
