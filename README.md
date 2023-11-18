@@ -6,7 +6,7 @@ Script for semi-automatic password reset of local Windows users.
 
 + All NTFS partitions are automatically detected
 + Automatically checks for errors
-+ Specifying the name of the directory in which Windows is installed (Windows by default)
++ Specifying the name of the directory in which Windows is installed (`Windows` by default)
 + Read SAM and select RID to reset the desired user's password
 + Output the result with the new SAM content
 
