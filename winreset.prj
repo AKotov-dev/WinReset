@@ -1,0 +1,64 @@
+[NAME]
+name=winreset
+
+[VERSION]
+version=0.1
+
+[RELEASE]
+release=0.mrx9
+
+[GROUP]
+group=Accessibility
+
+[DESCRIPTION]
+0=Resetting local Windows user passwords; After installation, command under su: winreset
+1=---
+2=More information: /usr/share/doc/package_name/repack.txt
+
+[MAINTAINER]
+maintainer=Alex Kotov
+
+[VENDOR]
+vendor=alex_q_2000 (C) 2023
+
+[SUMMARY]
+summary=Resetting local Windows user passwords
+
+[URLCOPY]
+urlcopy=https://github.com/AKotov-dev/WinReset
+
+[LICENSE]
+license=GPLv3
+
+[DEPS]
+deps=ntfsprogs chntpw ntfs-3g
+
+[META]
+meta=0
+
+[NOARCH]
+noarch=0
+
+[DEB]
+deb=0
+
+[FILES]
+0=/usr/bin/winreset
+1=/usr/share/doc/winreset/
+
+[URL32]
+url32=https://github.com/AKotov-dev/WinReset
+
+[PROGRAMNAME]
+programname=winreset
+
+[DEVTOOL]
+devtool=Shell
+
+[TOOLVERSION]
+toolversion=unknown
+
+[INFO]
+0=v0.1
+1=+ Initial release
+2=+ Packages for Mageia Linux
