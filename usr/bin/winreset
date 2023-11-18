@@ -1,0 +1,55 @@
+#!/bin/bash
+
+#---
+#Requires: ntfsprogs chntpw (ntfs-3g)
+#Исправление ошибок на ntfs-разделах в Linux
+#---
+tput sgr0
+
+clear
+
+#Проверка $UID (root)
+if [ "$UID" -ne "0" -a -z "$(groups $LOGNAME | grep wheel)" ]; then
+echo -e "Superuser rights are required to perform the operation! NTFS checking error!\n"
+exit 1
+fi;
+
+#Найти все разделы ntfs
+echo "---Finding NTFS volumes and fixing errors---"
+win=$(blkid | grep 'TYPE="ntfs"' | cut -f1 -d':')
+#Разделы не найдены = выйти
+if [ -z "$win" ]; then read -p "NTFS volumes not found, exit..."; exit 1; fi
+#Для LiveUSB
+#if [ -z "$win" ]; then read -p "NTFS volumes not found, exit..."; cd ~; $SHELL; exit 1; fi
+
+#Демонтаж, проверка, монтирование каждого раздела; (-b tries to fix bad clusters and -d to fix dirty states)
+for vol in $win; do umount -l $vol 2>/dev/null; ntfsfix -d $vol; mount $vol 2>/dev/null; echo; done
+
+#Windows Path
+read -p "Windows directory name (Enter=Windows): " winpath
+[ -z $winpath ] && winpath="Windows"
+winpath="/mnt/$winpath/System32/config"
+
+#Разделы ntfs найдены и проверены, найти тот, который содержит /mnt/Windows/System32/config or other directory
+clear
+echo "---Unlocking and resetting passwords---"
+for vol in $win; do
+umount -l /mnt 2>/dev/null; umount -l $vol 2>/dev/null
+mount $vol /mnt
+if [ -d $winpath ]; then
+cd $winpath; chntpw -l SAM; echo
+read -p "Enter RID: " RID
+chntpw -u 0x$RID SAM
+break
+fi
+done
+
+echo "---Result---"
+chntpw -l SAM
+
+#Возврат монтирования из /mnt на fstab
+umount -l /mnt 2>/dev/null; mount $vol 2>/dev/null
+
+#Для LiveUSB
+#cd ~; $SHELL
+
