@@ -12,7 +12,7 @@ Script for semi-automatic password reset of local Windows users.
 
 Used [chntpw](http://www.chntpw.com/): change password of a user in a Windows SAM file,
 or invoke registry editor. Should handle both 32 and 64 bit windows and
-all version from NT3.x to Win8.1. (c) Petter N Hagen.  
+all version from NT3.x to Win10. Developer: Petter N Hagen.  
 
 ![](https://github.com/AKotov-dev/WinReset/blob/main/ScreenShot1.png)  
 
