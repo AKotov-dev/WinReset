@@ -17,7 +17,7 @@ all version from NT3.x to Win10. Developer: Petter N Hagen.
 ![](https://github.com/AKotov-dev/WinReset/blob/main/ScreenShot1.png)  
 
 ## LiveUSB
-[Download WinReset LiveUSB...](https://cloud.mail.ru/public/sNho/qWbbDc9fn](https://drive.google.com/drive/folders/1rUd3In55iMEHEjm1bHE-eX3asfta4KHI?usp=sharing)
+[Download WinReset LiveUSB...](https://drive.google.com/drive/folders/1rUd3In55iMEHEjm1bHE-eX3asfta4KHI?usp=sharing)
 
 How to make a flash drive:
 1. Download the *.7z archive with the desired desktop and unpack it to a flash drive with a FAT32 file system
